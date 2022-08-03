@@ -1,0 +1,30 @@
+{
+  "name": "signify-nz/swiftmailer-aws-ses-transport",
+  "description": "A simple Swiftmailer transport for AWS SES.",
+  "homepage": "https://github.com/signify-nz/swiftmailer-aws-ses-transport",
+  "keywords": [
+    "swiftmailer",
+    "transport",
+    "aws",
+    "ses",
+    "email"
+  ],
+  "type": "silverstripe-vendormodule",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Signify Ltd",
+      "homepage": "https://www.signify.co.nz/"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/signify-nz/swiftmailer-aws-ses-transport/issues"
+  },
+  "require": {
+    "swiftmailer/swiftmailer": "^6.0",
+    "aws/aws-sdk-php": "^3.231"
+  },
+  "psr-4": {
+    "": "classes/"
+  }
+}
