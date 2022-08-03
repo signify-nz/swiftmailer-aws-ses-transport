@@ -24,7 +24,9 @@
     "swiftmailer/swiftmailer": "^6.0",
     "aws/aws-sdk-php": "^3.231"
   },
-  "psr-4": {
-    "Signify\\SwiftMailerAWSSESTransport\\": "classes/"
+  "autoload": {
+    "psr-4": {
+      "Signify\\SwiftMailerAWSSESTransport\\": "classes/"
+    }
   }
 }
