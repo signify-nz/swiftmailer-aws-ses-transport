@@ -1,6 +1,6 @@
 <?php
 
-namespace Signify\SwiftMailerAWSSESTransport;
+namespace Signify\SwiftMailerAWSSESTransport\Swift;
 
 use Aws\Ses\SesClient;
 use \Swift_Transport;
