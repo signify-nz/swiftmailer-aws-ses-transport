@@ -1,3 +1,3 @@
 # Swiftmailer AWS SES Transport
 
-A simple Swiftmailer Transport to semd mail over AWS SES.
+A simple Swiftmailer Transport to send mail over AWS SES.
