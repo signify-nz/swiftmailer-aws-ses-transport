@@ -25,6 +25,6 @@
     "aws/aws-sdk-php": "^3.231"
   },
   "psr-4": {
-    "": "classes/"
+    "Signify\\SwiftMailerAWSSESTransport\\": "classes/"
   }
 }

@@ -1,6 +1,12 @@
 <?php
 
+namespace Signify\SwiftMailerAWSSESTransport;
+
 use Aws\Ses\SesClient;
+use \Swift_Transport;
+use \Swift_Events_SimpleEventDispatcher;
+use \Swift_Mime_SimpleMessage;
+use \Swift_Events_EventListener;
 
 /**
  * Simple SES email transporter.
