@@ -24,14 +24,22 @@ class AWSSESTransport implements Swift_Transport {
     protected $eventDispatcher;
 
     /**
+     * An optional email address to send all emails from.
+     *
+     * @var string|null
+     */
+    protected $alwaysFrom;
+
+    /**
      * Create a new SES Transport using AWS config.
      *
      * @param array $config
      */
-    public function __construct($config)
+    public function __construct($config, $alwaysFrom = null)
     {
         $this->client = new SesClient($config);
         $this->eventDispatcher = new Swift_Events_SimpleEventDispatcher();
+        $this->alwaysFrom = $alwaysFrom;
     }
 
     /**
@@ -69,6 +77,16 @@ class AWSSESTransport implements Swift_Transport {
                 return 0;
             }
         }
+
+        // Optionally force set the 'from' header, and retain the original from
+        // address as the reply-to if no reply-to is provided.
+        if ($this->alwaysFrom) {
+            if (empty($message->getReplyTo())) {
+                $message->setReplyTo($message->getFrom());
+            }
+            $message->setFrom($this->alwaysFrom);
+        }
+
         $this->client->sendRawEmail([
             'RawMessage' => array('Data' => $message->toString())
         ]);
