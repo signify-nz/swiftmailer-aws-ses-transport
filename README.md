@@ -24,3 +24,12 @@ $awsConfig = [
 $transport = new AWSSESTransport($awsConfig);
 $transport->send($message);
 ```
+
+You can also force set the 'from' email address, which is useful if your SES account only has a single email address verified. The original 'from' address will be used as the 'reply-to' header if no 'reply-to' was set in the email.
+
+```php
+$awsConfig = [...];
+$fromEmail = 'no-reply@example.com';
+$transport = new AWSSESTransport($awsConfig, $fromEmail);
+$transport->send($message);
+```
